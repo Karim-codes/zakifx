@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.prerender/
+.vercel/
+.DS_Store
+*.tar.gz
+*.log
+.env
+.env.*
+!.env.example
+# Separate retained Sites preview checkout; the app source above runs from this root.
+zaki-fx-site/

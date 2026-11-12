@@ -1,0 +1,565 @@
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  margin-left: auto;
+}
+.programme-hero {
+  padding: 65px 0 60px;
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+  border-bottom: 1px solid var(--line);
+}
+.programme-hero > .shell > .mono {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  margin-bottom: 27px;
+  color: var(--bronze);
+}
+.programme-hero h1 {
+  font: 600 clamp(54px, 6vw, 85px)/1.02 var(--display);
+  letter-spacing: -1.7px;
+  max-width: 900px;
+}
+.programme-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 65px;
+  margin-top: 32px;
+}
+.programme-hero-bottom > p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--muted);
+  max-width: 640px;
+}
+.programme-page-price {
+  font: 600 65px/1 var(--display);
+  white-space: nowrap;
+  color: var(--forest);
+}
+.programme-page-price > small {
+  display: block;
+  font:
+    400 10px/1.8 Manrope,
+    sans-serif;
+  letter-spacing: 0.02em;
+  margin-top: 12px;
+  color: var(--muted);
+}
+.programme-content {
+  padding: 75px 0 85px;
+}
+.programme-content-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 90px;
+  align-items: start;
+}
+.programme-summary {
+  position: sticky;
+  top: 120px;
+  padding: 30px;
+  border: 1px solid #cad0bd;
+  background: #eeeee4;
+}
+.programme-summary > .mono {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--bronze);
+}
+.programme-summary > h2 {
+  font: 600 39px/1.08 var(--display);
+  letter-spacing: -0.8px;
+  margin: 19px 0 25px;
+}
+.programme-summary dl > div {
+  padding: 17px 0;
+  border-top: 1px solid #c4cdb5;
+}
+.programme-summary dt {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.programme-summary dd {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--muted);
+  margin: 0;
+}
+.programme-summary > .button {
+  width: 100%;
+  font-size: 12px;
+  gap: 14px;
+  margin-top: 15px;
+  padding-inline: 17px;
+}
+.summary-note {
+  font-size: 11px;
+  color: #69765c;
+  line-height: 1.9;
+  margin-top: 15px;
+}
+.programme-curriculum > .mono {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--bronze);
+}
+.programme-curriculum > h2 {
+  font: 600 61px/1.02 var(--display);
+  letter-spacing: -1px;
+  margin: 23px 0;
+}
+.curriculum-intro {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 30px;
+  max-width: 570px;
+}
+.curriculum-module {
+  border-bottom: 1px solid #c7cfb9;
+}
+.curriculum-module:first-of-type {
+  border-top: 1px solid #c7cfb9;
+}
+.curriculum-module summary {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  cursor: pointer;
+  padding: 23px 0;
+}
+.curriculum-module summary::-webkit-details-marker {
+  display: none;
+}
+.curriculum-module summary > .mono {
+  font-size: 11px;
+  letter-spacing: 0;
+  color: var(--bronze);
+}
+.curriculum-module h3 {
+  font: 600 25px/1.2 var(--display);
+  letter-spacing: -0.2px;
+}
+.curriculum-module summary > svg {
+  margin-left: auto;
+  transition: transform 0.2s;
+  width: 18px;
+  height: 18px;
+}
+.curriculum-module[open] summary > svg {
+  transform: rotate(45deg);
+}
+.curriculum-module > p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--muted);
+  padding: 0 15px 25px 39px;
+}
+.included-topics {
+  margin-top: 35px;
+  border-left: 1px solid #9aab85;
+  padding-left: 25px;
+}
+.included-topics h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.included-topics li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 12px 0;
+}
+.included-topics li > svg {
+  margin-top: 5px;
+  color: #72885f;
+}
+.enrolment-process > .shell > .mono {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--bronze);
+}
+.enrolment-process h2 {
+  font: 600 62px/1.03 var(--display);
+  letter-spacing: -1px;
+  margin: 24px 0 34px;
+}
+.enrolment-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px;
+  border-top: 1px solid #b7c3a7;
+  padding-top: 24px;
+  margin-bottom: 33px;
+}
+.enrolment-steps .mono {
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: #657858;
+}
+.enrolment-steps p {
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 300px;
+  margin-top: 13px;
+  color: var(--muted);
+}
+.other-programmes {
+  padding: 65px 0;
+}
+.other-programmes .mono {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--bronze);
+  margin-bottom: 25px;
+}
+.other-programmes a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  border-top: 1px solid #c2cbb4;
+  padding: 25px 0;
+  font: 600 35px/1.15 var(--display);
+  letter-spacing: -0.5px;
+}
+.other-programmes a:last-child {
+  border-bottom: 1px solid #c2cbb4;
+}
+.other-programmes a > span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  white-space: nowrap;
+  color: var(--forest);
+}
+.other-programmes a:hover {
+  color: var(--forest);
+}
+.programme-footer {
+  padding: 35px 0;
+}
+.programme-footer > .shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.programme-footer a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+}
+.programme-footer p {
+  font-size: 11px;
+  line-height: 1.9;
+  max-width: 550px;
+  color: #c9d4bf;
+}
+.enrolment-dialog {
+  width: 680px;
+  padding: 40px;
+}
+.enrolment-dialog > .mono {
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: var(--bronze);
+  padding-right: 30px;
+}
+.enrolment-dialog > h2 {
+  font: 600 56px/1.02 var(--display);
+  letter-spacing: -1px;
+  margin: 22px 0 25px;
+}
+.selected-programme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border: 1px solid #c4cfb7;
+  background: #e6eadd;
+  padding: 16px 18px;
+  margin-bottom: 26px;
+}
+.selected-programme > span {
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+.selected-programme > strong {
+  font: 600 38px/1 var(--display);
+  white-space: nowrap;
+  color: var(--forest);
+}
+.selected-programme small {
+  font:
+    400 10px/1 Manrope,
+    sans-serif;
+}
+.enrolment-form input,
+.enrolment-form select,
+.enrolment-form textarea {
+  border-color: #bac7aa;
+}
+.enrolment-form label > span {
+  font-size: 11px;
+  font-weight: 400;
+}
+.enrolment-form input::placeholder,
+.enrolment-form textarea::placeholder {
+  color: #7b866e;
+}
+.enrolment-note {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 1.9;
+  color: #587047;
+  margin: 18px 0 11px;
+}
+.enrolment-note > svg {
+  margin-top: 5px;
+}
+.enrolment-privacy {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #6f7b61;
+  margin-bottom: 20px;
+}
+.enrolment-form > .button {
+  width: 100%;
+}
+.enrolment-dialog .draft-result {
+  background: #e7ecdf;
+}
+@media (max-width: 1000px) {
+  .programme-content-grid {
+    gap: 45px;
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+  .programme-summary {
+    padding: 25px;
+  }
+  .programme-summary > h2 {
+    font-size: 34px;
+  }
+  .programme-curriculum > h2 {
+    font-size: 52px;
+  }
+  .programme-footer > .shell {
+    flex-wrap: wrap;
+  }
+  .programme-footer p {
+    max-width: 450px;
+  }
+  .enrolment-steps {
+    gap: 30px;
+  }
+  .programme-page-price {
+    font-size: 57px;
+  }
+}
+@media (max-width: 760px) {
+  .back-link {
+    font-size: 11px;
+    gap: 8px;
+  }
+  .back-link > svg {
+    width: 14px;
+  }
+  .programme-hero {
+    padding: 38px 0 42px;
+  }
+  .programme-hero > .shell > .mono {
+    font-size: 10px;
+    margin-bottom: 25px;
+  }
+  .programme-hero h1 {
+    font-size: 59px;
+    line-height: 1.03;
+    letter-spacing: -1.2px;
+  }
+  .programme-hero-bottom {
+    display: block;
+    margin-top: 26px;
+  }
+  .programme-hero-bottom > p {
+    font-size: 15px;
+    line-height: 1.9;
+  }
+  .programme-page-price {
+    display: block;
+    font-size: 57px;
+    margin-top: 26px;
+  }
+  .programme-page-price > small {
+    font-size: 10px;
+    line-height: 1.8;
+    margin-top: 11px;
+  }
+  .programme-content {
+    padding: 35px 0 50px;
+  }
+  .programme-content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .programme-summary {
+    position: static;
+    width: 100%;
+    padding: 25px;
+  }
+  .programme-summary > h2 {
+    font-size: 38px;
+  }
+  .programme-summary dd {
+    font-size: 14px;
+  }
+  .programme-summary > .button {
+    font-size: 12px;
+    min-height: 53px;
+  }
+  .summary-note {
+    font-size: 11px;
+  }
+  .programme-curriculum > h2 {
+    font-size: 51px;
+    margin-top: 22px;
+  }
+  .curriculum-intro {
+    font-size: 14px;
+  }
+  .curriculum-module h3 {
+    font-size: 23px;
+  }
+  .curriculum-module summary {
+    gap: 14px;
+    padding-block: 21px;
+  }
+  .curriculum-module > p {
+    font-size: 14px;
+    padding-left: 32px;
+  }
+  .included-topics li {
+    font-size: 13px;
+  }
+  .enrolment-process h2 {
+    font-size: 52px;
+  }
+  .enrolment-steps {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    margin-bottom: 30px;
+  }
+  .enrolment-steps > div {
+    border-bottom: 1px solid #bac7ab;
+    padding-bottom: 21px;
+  }
+  .enrolment-steps p {
+    max-width: none;
+    font-size: 14px;
+  }
+  .enrolment-process .button {
+    width: 100%;
+    font-size: 12px;
+    gap: 20px;
+  }
+  .other-programmes {
+    padding: 42px 0;
+  }
+  .other-programmes a {
+    font-size: 29px;
+    line-height: 1.1;
+    gap: 24px;
+    padding-block: 23px;
+  }
+  .other-programmes a > span:last-child {
+    gap: 15px;
+  }
+  .other-programmes a svg {
+    width: 19px;
+  }
+  .programme-footer {
+    padding: 30px 0;
+  }
+  .programme-footer > .shell {
+    display: block;
+  }
+  .programme-footer a {
+    font-size: 11px;
+  }
+  .programme-footer p {
+    font-size: 11px;
+    margin: 20px 0;
+  }
+  .enrolment-dialog {
+    padding: 43px 24px 28px;
+  }
+  .enrolment-dialog > h2 {
+    font-size: 49px;
+  }
+  .enrolment-dialog > .mono {
+    font-size: 10px;
+    max-width: 290px;
+  }
+  .selected-programme {
+    padding: 14px;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  .selected-programme > span {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .selected-programme > strong {
+    font-size: 34px;
+  }
+  .enrolment-form label {
+    font-size: 12px;
+  }
+  .enrolment-note,
+  .enrolment-privacy {
+    font-size: 11px;
+    line-height: 1.9;
+  }
+  .enrolment-form > .button {
+    font-size: 12px;
+    padding-inline: 17px;
+    gap: 15px;
+  }
+}
+@media (max-width: 390px) {
+  .programme-hero h1 {
+    font-size: 52px;
+  }
+  .back-link {
+    font-size: 10px;
+    gap: 6px;
+  }
+  .programme-content-grid {
+    gap: 35px;
+  }
+  .programme-summary {
+    padding: 22px;
+  }
+  .curriculum-module h3 {
+    font-size: 22px;
+  }
+  .programme-curriculum > h2 {
+    font-size: 47px;
+  }
+  .enrolment-dialog > h2 {
+    font-size: 46px;
+  }
+}
