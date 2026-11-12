@@ -17,6 +17,7 @@ import { prepareEnquiry } from "@/lib/enquiry";
 import { programmes, type Programme } from "@/data/programmes";
 import { EnrolmentDialog } from "@/components/enrolment-dialog";
 import { ProgrammePage } from "@/components/programme-page";
+import { AgencyCredit } from "@/components/agency-credit";
 
 const questions = [
   [
@@ -805,7 +806,7 @@ function HomePage() {
           <div className="footer-bottom mono">
             <span>© {new Date().getFullYear()} ZAKI FX TRADING ACADEMY</span>
             <button onClick={openPrivacy}>Privacy &amp; enquiries</button>
-            <span>A more considered perspective.</span>
+            <AgencyCredit />
           </div>
         </div>
       </footer>

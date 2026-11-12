@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowLeft, ArrowUpRight, Check, Plus } from "lucide-react";
 import { programmes, type Programme } from "@/data/programmes";
 import { EnrolmentDialog } from "./enrolment-dialog";
+import { AgencyCredit } from "./agency-credit";
 
 const modules: Record<string, { title: string; detail: string }[]> = {
   foundation: [
@@ -259,6 +260,9 @@ export function ProgrammePage({ programme }: { programme: Programme }) {
           <a href="mailto:youvsyou@zakifx.com">
             youvsyou@zakifx.com <ArrowUpRight size={14} />
           </a>
+        </div>
+        <div className="shell agency-credit-row">
+          <AgencyCredit />
         </div>
       </footer>
       <EnrolmentDialog programme={enrol} onClose={() => setEnrol(null)} />

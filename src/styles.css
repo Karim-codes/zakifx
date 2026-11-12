@@ -1468,6 +1468,33 @@ button:hover > .button-arrow {
 .footer-bottom > button:hover {
   color: var(--paper);
 }
+.agency-credit {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #c6d0ba;
+}
+.agency-credit > a {
+  display: inline;
+  font: inherit;
+  font-weight: 600;
+  color: var(--paper);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.agency-credit > a:hover {
+  color: #d9c6a8;
+}
+.programme-footer > .agency-credit-row {
+  justify-content: flex-end;
+  text-align: right;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #63765e;
+}
 dialog {
   max-width: calc(100% - 32px);
   max-height: 92dvh;
