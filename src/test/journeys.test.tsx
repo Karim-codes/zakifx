@@ -99,7 +99,7 @@ describe("progressive content and motion", () => {
   });
   it("keeps public copy and course exploration in server markup", () => {
     const html = renderToString(<App />);
-    expect(html).toContain("what matters.");
+    expect(html).toContain("With Zaki.");
     expect(html).toContain("/assets/zaki-portrait.webp");
     expect(html.match(/<img[^>]+zaki-portrait/g)).toHaveLength(1);
     expect(html).toContain('<details class="programme"');
@@ -156,15 +156,23 @@ describe("safe illustrative data", () => {
     const { data, level, breakIndex, swings } = createMarketStudy();
     expect(level).toBe(data[15].h);
     expect(data[breakIndex].c).toBeGreaterThan(level);
-    data.slice(21, breakIndex).forEach(c => expect(c.c).toBeLessThanOrEqual(level));
-    swings.forEach(point => expect(point.price).toBe(point.below ? data[point.index].l : data[point.index].h));
+    data
+      .slice(21, breakIndex)
+      .forEach((c) => expect(c.c).toBeLessThanOrEqual(level));
+    swings.forEach((point) =>
+      expect(point.price).toBe(
+        point.below ? data[point.index].l : data[point.index].h,
+      ),
+    );
     expect(swings[2].price).toBeGreaterThan(swings[0].price);
     expect(swings[3].price).toBeGreaterThan(swings[1].price);
   });
   it("uses a consistent 2:1 position drawing and valid OHLC data in either timeframe", () => {
     for (const hours of [1, 4]) {
       const { data, position, drawings } = createMarketStudy(hours);
-      expect((position.target - position.entry) / (position.entry - position.stop)).toBe(2);
+      expect(
+        (position.target - position.entry) / (position.entry - position.stop),
+      ).toBe(2);
       expect(data[position.from].l).toBeLessThan(position.entry);
       expect(data[position.from].h).toBeGreaterThan(position.entry);
       expect(position.stop).toBeLessThan(data[34].l);
@@ -201,5 +209,9 @@ describe("safe illustrative data", () => {
     expect(url.searchParams.get("subject")).toBe(
       "ZAKI FX enquiry: Course & mentorship",
     );
+    const whatsapp = new URL(draft.whatsapp);
+    expect(whatsapp.origin).toBe("https://wa.me");
+    expect(whatsapp.pathname).toBe("/447522185202");
+    expect(whatsapp.searchParams.get("text")).toBe(draft.body);
   });
 });

@@ -96,7 +96,7 @@ export function ProgrammePage({ programme }: { programme: Programme }) {
       <main id="programme-main">
         <section className="programme-hero dark-section">
           <div className="shell">
-            <p className="mono lime-text">
+            <p className="mono accent-text">
               PROGRAMME {programme.number} / {programme.category}
             </p>
             <h1>{programme.title}</h1>
@@ -156,11 +156,11 @@ export function ProgrammePage({ programme }: { programme: Programme }) {
               </p>
             </aside>
             <div className="programme-curriculum">
-              <p className="mono">The learning, in focus.</p>
+              <p className="mono">What you’ll study</p>
               <h2>
-                Your curriculum,
+                Explore
                 <br />
-                <em>in perspective.</em>
+                <em>the curriculum.</em>
               </h2>
               <p className="curriculum-intro">
                 Explore the programme’s subjects below. These are curriculum

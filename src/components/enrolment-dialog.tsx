@@ -161,8 +161,9 @@ export function EnrolmentDialog({
               availability and terms with you before enrolment.
             </p>
             <p className="enrolment-privacy">
-              Your details stay on this device until you choose to send the
-              prepared email to ZAKI FX.
+              Prepare your enquiry here, then review and send it through
+              WhatsApp or your email app. Opening WhatsApp shares the prepared
+              text with that service.
             </p>
             <button className="button button-dark" type="submit">
               <span>Prepare enrolment enquiry</span>
@@ -173,10 +174,19 @@ export function EnrolmentDialog({
             <div className="draft-result" role="status">
               <strong>Your enrolment enquiry is ready.</strong>
               <p>
-                Review and send the draft in your email app. Preparing this form
-                does not send an enquiry or confirm a place.
+                Choose WhatsApp or email to review and send your enquiry. The
+                academy will confirm availability and terms with you.
               </p>
-              <a ref={draftLink} href={draft.mailto}>
+              <a
+                ref={draftLink}
+                href={draft.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Continue on WhatsApp <ArrowUpRight size={16} />
+                <span className="sr-only">Opens in a new tab</span>
+              </a>
+              <a href={draft.mailto}>
                 Open email draft <ArrowUpRight size={16} />
               </a>
               <button type="button" onClick={copy}>

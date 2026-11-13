@@ -15,11 +15,21 @@ Requires Node.js 22. Install dependencies with `npm ci`, then run the commands b
 
 ## Design and interactions
 
-Warm ivory, forest green and muted bronze, with self-hosted Manrope typography. Zaki's supplied portrait appears once on the homepage. The approach section is a chart lesson, with candle-anchored swing labels, a structure-break line, a retest zone and an example 2:1 position drawing. Drawings share the chart's pan/zoom transform. All market prices are constructed teaching data, shown with hindsight, not live quotes or trade recommendations.
+Charcoal, champagne and warm white, with self-hosted DM Serif Text headings and Manrope body typography. Zaki's supplied portrait appears once on the homepage and moves ahead of the introductory paragraph on phones. The approach section is a chart lesson, with candle-anchored swing labels, a structure-break line, a retest zone and an example 2:1 position drawing. Drawings share the chart's pan/zoom transform and follow its colour palette. All market prices are constructed teaching data, shown with hindsight.
 
 Desktop scrolling develops the chart lesson. Phones and reduced-motion settings use direct chapter controls without scroll pinning. Reveals enhance already-visible markup. The chart has keyboard controls, an accessible data table and an SVG fallback.
 
-Programme details remain on this site. Enrol buttons open a native dialog with the selected programme and listed price. Enquiry forms validate locally and prepare an email draft; visitors must send it in their email app. No message-delivery service, payments, accounts, student dashboard, video hosting, tracking or database is included.
+Programme details remain on this site. Enrol buttons open a native dialog with the selected programme and listed price. Enquiry forms validate locally and prepare a message. Visitors choose WhatsApp or email, then review and send it through that service. WhatsApp receives the prepared text when its link is opened. Enquiry details are held in page memory and cleared on reload. The public website has no enquiry database, payment processing or student accounts.
+
+## Photography still needed
+
+The supplied portrait is the current genuine image. About and mentorship use teaching content as a fallback while new photography is pending.
+
+- A landscape photograph of Zaki explaining a chart, ideally in a 3:2 composition, for mentorship.
+- A natural working photograph with space around Zaki, ideally in a 4:3 composition, for About.
+- An optional genuine teaching interaction, with permission from everyone pictured.
+
+Request original files, ideally at least 2400 pixels on the long edge, with consistent lighting and permission for website use. Keep faces, hands and charts away from the outer edges so both desktop and phone crops work.
 
 ## Business information
 
@@ -38,10 +48,10 @@ Canonical and social URLs use `SITE_URL` when provided, otherwise Vercel's `VERC
 ## Assets and references
 
 - Authentic portrait: supplied by the user as `public/assets/image.png`; `zaki-portrait.webp` is an optimised copy.
-- Manrope and IBM Plex Mono: self-hosted SIL Open Font License assets; licences accompany the fonts.
+- DM Serif Text, Manrope and IBM Plex Mono are self-hosted SIL Open Font License assets. Licences accompany the fonts. DM Serif Text comes from the Google Fonts repository.
 - Interactive candlestick component: Isaiah Bjork's component supplied by the user through 21st.dev; support files from [the author's registry](https://ui.isaiahbjork.com/candlestick-chart.json). Academy-specific data and drawings are in `src/lib/market-study.ts` and `src/components/ui/candlestick-chart-utils/drawings.ts`.
 - Chart conventions checked against [TradingView's position-tool documentation](https://www.tradingview.com/support/solutions/43000517002-long-position-drawing-tool/) and [OANDA's explanation of market structure](https://ftmo.oanda.com/blog/how-to-read-market-structure-and-price-action-patterns/).
 
 ## Verification
 
-Automated checks cover all programme routes, matching enquiry prices, form validation, email encoding, stale-draft reset, readable prerendered content, one portrait, reduced-motion behaviour, scroll chapter state and internally consistent chart annotations. Browser review includes the desktop hero/chart, a 375 × 667 phone viewport, the mobile enrolment dialog and Chrome's reduced-motion emulation. This is a website preview, not verification of the academy's educational or financial claims.
+Automated checks cover all programme routes, matching enquiry prices, form validation, email and WhatsApp encoding, stale-draft reset, readable prerendered content, one portrait, reduced-motion behaviour, scroll chapter state and internally consistent chart annotations. Browser review includes desktop and phone layouts, the three programme pages, enquiry preparation, navigation, FAQs, chart chapters and Chrome's reduced-motion emulation. The website review does not independently verify the academy's educational or financial claims.

@@ -2,25 +2,21 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  min-height: 44px;
   font-size: 13px;
   margin-left: auto;
 }
 .programme-hero {
-  padding: 65px 0 60px;
-  background: var(--paper) !important;
-  color: var(--ink) !important;
+  padding: 68px 0 58px;
   border-bottom: 1px solid var(--line);
 }
 .programme-hero > .shell > .mono {
-  font-size: 11px;
-  letter-spacing: 0.04em;
   margin-bottom: 27px;
-  color: var(--bronze);
+  color: var(--accent);
 }
 .programme-hero h1 {
-  font: 600 clamp(54px, 6vw, 85px)/1.02 var(--display);
-  letter-spacing: -1.7px;
-  max-width: 900px;
+  font-size: clamp(52px, 6vw, 85px);
+  max-width: 920px;
 }
 .programme-hero-bottom {
   display: flex;
@@ -30,24 +26,22 @@
   margin-top: 32px;
 }
 .programme-hero-bottom > p {
-  font-size: 16px;
-  line-height: 1.9;
   color: var(--muted);
-  max-width: 640px;
+  max-width: 620px;
 }
 .programme-page-price {
-  font: 600 65px/1 var(--display);
+  font: 400 65px/1 var(--display);
   white-space: nowrap;
-  color: var(--forest);
+  color: var(--accent);
 }
 .programme-page-price > small {
   display: block;
   font:
-    400 10px/1.8 Manrope,
+    400 12px/1.8 Manrope,
     sans-serif;
-  letter-spacing: 0.02em;
-  margin-top: 12px;
+  margin-top: 13px;
   color: var(--muted);
+  letter-spacing: 0;
 }
 .programme-content {
   padding: 75px 0 85px;
@@ -55,171 +49,152 @@
 .programme-content-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
-  gap: 90px;
+  gap: 80px;
   align-items: start;
 }
 .programme-summary {
   position: sticky;
-  top: 120px;
+  top: 115px;
   padding: 30px;
-  border: 1px solid #cad0bd;
-  background: #eeeee4;
+  border: 1px solid #514735;
+  background: var(--surface);
 }
-.programme-summary > .mono {
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  color: var(--bronze);
+.programme-summary > .mono,
+.programme-curriculum > .mono,
+.enrolment-process > .shell > .mono,
+.other-programmes .mono {
+  color: var(--accent);
 }
 .programme-summary > h2 {
-  font: 600 39px/1.08 var(--display);
-  letter-spacing: -0.8px;
+  font-size: 37px;
   margin: 19px 0 25px;
 }
+.programme-summary dl {
+  margin: 0;
+}
 .programme-summary dl > div {
-  padding: 17px 0;
-  border-top: 1px solid #c4cdb5;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
 }
 .programme-summary dt {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   margin-bottom: 7px;
 }
 .programme-summary dd {
+  margin: 0;
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.85;
-  color: var(--muted);
-  margin: 0;
 }
 .programme-summary > .button {
   width: 100%;
-  font-size: 12px;
-  gap: 14px;
   margin-top: 15px;
   padding-inline: 17px;
+  gap: 15px;
+  font-size: 13px;
 }
 .summary-note {
-  font-size: 11px;
-  color: #69765c;
-  line-height: 1.9;
-  margin-top: 15px;
-}
-.programme-curriculum > .mono {
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  color: var(--bronze);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 16px;
 }
 .programme-curriculum > h2 {
-  font: 600 61px/1.02 var(--display);
-  letter-spacing: -1px;
+  font-size: clamp(42px, 4vw, 57px);
   margin: 23px 0;
 }
 .curriculum-intro {
+  color: var(--muted);
   font-size: 15px;
   line-height: 1.9;
-  color: var(--muted);
+  max-width: 580px;
   margin-bottom: 30px;
-  max-width: 570px;
 }
 .curriculum-module {
-  border-bottom: 1px solid #c7cfb9;
+  border-bottom: 1px solid var(--line);
 }
 .curriculum-module:first-of-type {
-  border-top: 1px solid #c7cfb9;
+  border-top: 1px solid var(--line);
 }
 .curriculum-module summary {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   list-style: none;
   cursor: pointer;
   padding: 23px 0;
 }
-.curriculum-module summary::-webkit-details-marker {
-  display: none;
-}
 .curriculum-module summary > .mono {
-  font-size: 11px;
-  letter-spacing: 0;
-  color: var(--bronze);
+  color: var(--accent);
+  font-size: 12px;
 }
 .curriculum-module h3 {
-  font: 600 25px/1.2 var(--display);
-  letter-spacing: -0.2px;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
 }
 .curriculum-module summary > svg {
   margin-left: auto;
-  transition: transform 0.2s;
-  width: 18px;
-  height: 18px;
+  color: var(--accent);
+  transition: transform 0.25s;
 }
 .curriculum-module[open] summary > svg {
   transform: rotate(45deg);
 }
 .curriculum-module > p {
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.9;
-  color: var(--muted);
-  padding: 0 15px 25px 39px;
+  padding: 0 20px 25px 34px;
 }
 .included-topics {
   margin-top: 35px;
-  border-left: 1px solid #9aab85;
   padding-left: 25px;
+  border-left: 1px solid #806b49;
 }
 .included-topics h3 {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 .included-topics li {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 13px;
-  line-height: 1.85;
   margin: 12px 0;
+  font-size: 14px;
 }
 .included-topics li > svg {
-  margin-top: 5px;
-  color: #72885f;
-}
-.enrolment-process > .shell > .mono {
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  color: var(--bronze);
+  color: var(--accent);
+  margin-top: 6px;
 }
 .enrolment-process h2 {
-  font: 600 62px/1.03 var(--display);
-  letter-spacing: -1px;
+  font-size: clamp(43px, 4.5vw, 63px);
   margin: 24px 0 34px;
 }
 .enrolment-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 55px;
-  border-top: 1px solid #b7c3a7;
-  padding-top: 24px;
-  margin-bottom: 33px;
+  gap: 50px;
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+  margin-bottom: 34px;
 }
 .enrolment-steps .mono {
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  color: #657858;
+  color: var(--accent);
+  font-size: 12px;
 }
 .enrolment-steps p {
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.9;
-  max-width: 300px;
+  max-width: 310px;
   margin-top: 13px;
-  color: var(--muted);
 }
 .other-programmes {
   padding: 65px 0;
 }
 .other-programmes .mono {
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  color: var(--bronze);
   margin-bottom: 25px;
 }
 .other-programmes a {
@@ -227,26 +202,26 @@
   align-items: center;
   justify-content: space-between;
   gap: 35px;
-  border-top: 1px solid #c2cbb4;
-  padding: 25px 0;
-  font: 600 35px/1.15 var(--display);
-  letter-spacing: -0.5px;
+  border-top: 1px solid var(--line);
+  padding: 27px 0;
+  font: 400 35px/1.2 var(--display);
 }
 .other-programmes a:last-child {
-  border-bottom: 1px solid #c2cbb4;
+  border-bottom: 1px solid var(--line);
 }
 .other-programmes a > span:last-child {
   display: flex;
   align-items: center;
   gap: 28px;
+  color: var(--accent);
   white-space: nowrap;
-  color: var(--forest);
 }
 .other-programmes a:hover {
-  color: var(--forest);
+  color: var(--accent);
 }
 .programme-footer {
   padding: 35px 0;
+  border-top: 1px solid var(--line);
 }
 .programme-footer > .shell {
   display: flex;
@@ -258,27 +233,26 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 11px;
+  min-height: 44px;
+  font-size: 12px;
 }
 .programme-footer p {
-  font-size: 11px;
+  color: var(--muted);
+  font-size: 12px;
   line-height: 1.9;
-  max-width: 550px;
-  color: #c9d4bf;
+  max-width: 520px;
 }
 .enrolment-dialog {
   width: 680px;
-  padding: 40px;
+  padding: 45px 40px 35px;
 }
 .enrolment-dialog > .mono {
-  font-size: 11px;
-  letter-spacing: 0.03em;
-  color: var(--bronze);
-  padding-right: 30px;
+  color: var(--accent);
+  padding-right: 28px;
+  font-size: 12px;
 }
 .enrolment-dialog > h2 {
-  font: 600 56px/1.02 var(--display);
-  letter-spacing: -1px;
+  font-size: 48px;
   margin: 22px 0 25px;
 }
 .selected-programme {
@@ -286,63 +260,51 @@
   align-items: center;
   justify-content: space-between;
   gap: 25px;
-  border: 1px solid #c4cfb7;
-  background: #e6eadd;
-  padding: 16px 18px;
-  margin-bottom: 26px;
+  border: 1px solid #6d5a3d;
+  background: #30291e;
+  padding: 18px;
+  margin-bottom: 27px;
 }
 .selected-programme > span {
   font-size: 14px;
   line-height: 1.7;
-  font-weight: 600;
 }
 .selected-programme > strong {
-  font: 600 38px/1 var(--display);
+  color: var(--accent);
+  font: 400 42px/1 var(--display);
   white-space: nowrap;
-  color: var(--forest);
 }
 .selected-programme small {
   font:
-    400 10px/1 Manrope,
+    400 11px/1 Manrope,
     sans-serif;
 }
-.enrolment-form input,
-.enrolment-form select,
-.enrolment-form textarea {
-  border-color: #bac7aa;
-}
 .enrolment-form label > span {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
-}
-.enrolment-form input::placeholder,
-.enrolment-form textarea::placeholder {
-  color: #7b866e;
 }
 .enrolment-note {
   display: flex;
-  gap: 8px;
-  font-size: 11px;
-  line-height: 1.9;
-  color: #587047;
-  margin: 18px 0 11px;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--accent);
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 18px 0 12px;
 }
 .enrolment-note > svg {
   margin-top: 5px;
 }
 .enrolment-privacy {
-  font-size: 11px;
-  line-height: 1.9;
-  color: #6f7b61;
-  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  margin-bottom: 21px;
 }
 .enrolment-form > .button {
   width: 100%;
 }
-.enrolment-dialog .draft-result {
-  background: #e7ecdf;
-}
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .programme-content-grid {
     gap: 45px;
     grid-template-columns: 0.9fr 1.1fr;
@@ -351,47 +313,28 @@
     padding: 25px;
   }
   .programme-summary > h2 {
-    font-size: 34px;
-  }
-  .programme-curriculum > h2 {
-    font-size: 52px;
+    font-size: 33px;
   }
   .programme-footer > .shell {
     flex-wrap: wrap;
   }
-  .programme-footer p {
-    max-width: 450px;
-  }
   .enrolment-steps {
     gap: 30px;
   }
-  .programme-page-price {
-    font-size: 57px;
-  }
 }
 @media (max-width: 760px) {
-  .back-link {
-    font-size: 11px;
-    gap: 8px;
-  }
-  .back-link > svg {
-    width: 14px;
-  }
   .programme-hero {
     padding: 38px 0 42px;
   }
   .programme-hero > .shell > .mono {
-    font-size: 10px;
-    margin-bottom: 25px;
+    font-size: 12px;
   }
   .programme-hero h1 {
-    font-size: 59px;
-    line-height: 1.03;
-    letter-spacing: -1.2px;
+    font-size: clamp(43px, 10.5vw, 64px);
   }
   .programme-hero-bottom {
     display: block;
-    margin-top: 26px;
+    margin-top: 25px;
   }
   .programme-hero-bottom > p {
     font-size: 15px;
@@ -399,20 +342,14 @@
   }
   .programme-page-price {
     display: block;
-    font-size: 57px;
-    margin-top: 26px;
-  }
-  .programme-page-price > small {
-    font-size: 10px;
-    line-height: 1.8;
-    margin-top: 11px;
+    font-size: 59px;
+    margin-top: 27px;
   }
   .programme-content {
-    padding: 35px 0 50px;
+    padding: 35px 0 55px;
   }
   .programme-content-grid {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 40px;
   }
   .programme-summary {
@@ -421,145 +358,95 @@
     padding: 25px;
   }
   .programme-summary > h2 {
-    font-size: 38px;
-  }
-  .programme-summary dd {
-    font-size: 14px;
-  }
-  .programme-summary > .button {
-    font-size: 12px;
-    min-height: 53px;
-  }
-  .summary-note {
-    font-size: 11px;
+    font-size: 35px;
   }
   .programme-curriculum > h2 {
-    font-size: 51px;
-    margin-top: 22px;
-  }
-  .curriculum-intro {
-    font-size: 14px;
+    font-size: 43px;
   }
   .curriculum-module h3 {
-    font-size: 23px;
+    font-size: 17px;
   }
   .curriculum-module summary {
-    gap: 14px;
+    gap: 13px;
     padding-block: 21px;
   }
   .curriculum-module > p {
-    font-size: 14px;
-    padding-left: 32px;
-  }
-  .included-topics li {
-    font-size: 13px;
-  }
-  .enrolment-process h2 {
-    font-size: 52px;
+    padding-left: 30px;
   }
   .enrolment-steps {
     grid-template-columns: 1fr;
     gap: 23px;
-    margin-bottom: 30px;
   }
   .enrolment-steps > div {
-    border-bottom: 1px solid #bac7ab;
+    border-bottom: 1px solid var(--line);
     padding-bottom: 21px;
   }
   .enrolment-steps p {
     max-width: none;
-    font-size: 14px;
   }
   .enrolment-process .button {
     width: 100%;
-    font-size: 12px;
-    gap: 20px;
+    font-size: 13px;
+    gap: 18px;
   }
   .other-programmes {
-    padding: 42px 0;
+    padding: 45px 0;
   }
   .other-programmes a {
-    font-size: 29px;
-    line-height: 1.1;
-    gap: 24px;
-    padding-block: 23px;
+    font-size: 27px;
+    line-height: 1.2;
+    gap: 22px;
+    padding-block: 25px;
   }
   .other-programmes a > span:last-child {
-    gap: 15px;
+    gap: 13px;
   }
   .other-programmes a svg {
-    width: 19px;
-  }
-  .programme-footer {
-    padding: 30px 0;
+    width: 20px;
   }
   .programme-footer > .shell {
     display: block;
   }
-  .programme-footer a {
-    font-size: 11px;
-  }
   .programme-footer p {
-    font-size: 11px;
-    margin: 20px 0;
+    margin: 17px 0;
+  }
+  .programme-footer > .agency-credit-row {
+    text-align: left;
   }
   .enrolment-dialog {
-    padding: 43px 24px 28px;
+    padding: 48px 24px 28px;
   }
   .enrolment-dialog > h2 {
-    font-size: 49px;
-  }
-  .enrolment-dialog > .mono {
-    font-size: 10px;
-    max-width: 290px;
+    font-size: 39px;
   }
   .selected-programme {
-    padding: 14px;
-    gap: 15px;
-    margin-bottom: 25px;
+    padding: 16px;
+    gap: 16px;
   }
   .selected-programme > span {
-    font-size: 12px;
-    line-height: 1.7;
+    font-size: 13px;
   }
   .selected-programme > strong {
-    font-size: 34px;
-  }
-  .enrolment-form label {
-    font-size: 12px;
-  }
-  .enrolment-note,
-  .enrolment-privacy {
-    font-size: 11px;
-    line-height: 1.9;
-  }
-  .enrolment-form > .button {
-    font-size: 12px;
-    padding-inline: 17px;
-    gap: 15px;
-  }
-}
-@media (max-width: 390px) {
-  .programme-hero h1 {
-    font-size: 52px;
+    font-size: 35px;
   }
   .back-link {
-    font-size: 10px;
-    gap: 6px;
+    font-size: 12px;
+    gap: 8px;
   }
-  .programme-content-grid {
-    gap: 35px;
+}
+@media (max-width: 370px) {
+  .back-link {
+    font-size: 11px;
+    gap: 6px;
   }
   .programme-summary {
     padding: 22px;
   }
-  .curriculum-module h3 {
-    font-size: 22px;
+  .selected-programme {
+    padding: 13px;
+    gap: 12px;
   }
-  .programme-curriculum > h2 {
-    font-size: 47px;
-  }
-  .enrolment-dialog > h2 {
-    font-size: 46px;
+  .selected-programme > strong {
+    font-size: 32px;
   }
 }

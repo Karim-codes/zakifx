@@ -289,7 +289,10 @@ export function CandlestickChart({
         const want = Math.min(
           len,
           cfg.current.defaultVisibleCount,
-          Math.max(MIN_CANDLES, Math.floor((w - GUTTER - PAD_LEFT) / c.minCandleSpacing)),
+          Math.max(
+            MIN_CANDLES,
+            Math.floor((w - GUTTER - PAD_LEFT) / c.minCandleSpacing),
+          ),
         );
         if (Math.abs(s.te - s.ts - want) > 0.5 || s.te !== len) {
           const first = s.enter === 0;
@@ -594,7 +597,7 @@ export function CandlestickChart({
       ctx.globalAlpha = 1;
       ctx.restore();
 
-      drawStudyAnnotations(c.drawings, { ctx, xOf, yOf, plot });
+      drawStudyAnnotations(c.drawings, { ctx, xOf, yOf, plot, palette: p });
 
       // Last-close badge in the gutter.
       const badge = badgeRef.current;

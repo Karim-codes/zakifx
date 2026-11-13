@@ -34,7 +34,8 @@ export function MarketStory() {
     let queued = false;
     const update = () => {
       queued = false;
-      if (reduced.matches || window.matchMedia("(max-width: 760px)").matches) return;
+      if (reduced.matches || window.matchMedia("(max-width: 760px)").matches)
+        return;
       const bounds = section.getBoundingClientRect();
       const distance = Math.max(1, section.offsetHeight - window.innerHeight);
       const progress = Math.max(0, Math.min(1, -bounds.top / distance));
@@ -88,9 +89,9 @@ export function MarketStory() {
       <div className="story-sticky">
         <div className="shell">
           <div className="story-header">
-            <p className="mono">Field note 01 / A lesson in looking closer</p>
+            <p className="mono">The approach / An illustrated chart study</p>
             <p className="mono story-scroll">
-              <ArrowDown size={13} /> A change of perspective
+              <ArrowDown size={16} /> Explore the analysis
             </p>
           </div>
           <div className="story-heading-row">

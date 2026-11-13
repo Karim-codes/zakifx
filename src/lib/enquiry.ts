@@ -11,5 +11,6 @@ export function prepareEnquiry(values: Enquiry) {
   return {
     body,
     mailto: `mailto:youvsyou@zakifx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+    whatsapp: `https://wa.me/447522185202?text=${encodeURIComponent(body)}`,
   };
 }

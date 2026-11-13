@@ -59,7 +59,7 @@ export function MarketLab({ immersive = false, chapter = 0 }: { immersive?: bool
           data={study.data}
           drawings={study.drawings[chapter]}
           minCandleSpacing={4}
-          tone="light"
+          tone="dark"
           palette="ink"
           height={mobile ? 300 : immersive ? 350 : 350}
           defaultVisibleCount={48}

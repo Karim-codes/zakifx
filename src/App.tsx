@@ -2,9 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   ArrowUpRight,
   ArrowRight,
-  ArrowDown,
   Plus,
-  Minus,
   Menu,
   X,
   Check,
@@ -70,16 +68,9 @@ function Brand({ onClick }: { onClick?: () => void }) {
     </a>
   );
 }
-function SectionLabel({
-  number,
-  children,
-}: {
-  number: string;
-  children: React.ReactNode;
-}) {
+function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <div className="section-label mono">
-      <span>{number}</span>
       <span>{children}</span>
     </div>
   );
@@ -227,9 +218,7 @@ function HomePage() {
           <nav className="desktop-nav" aria-label="Main navigation">
             <a href="#about">Meet Zaki</a>
             <a href="#method">The approach</a>
-            <a href="#courses">
-              Programmes <span>03</span>
-            </a>
+            <a href="#courses">Programmes</a>
             <a href="#mentorship">1:1 mentorship</a>
           </nav>
           <a className="header-cta" href="#contact">
@@ -253,7 +242,7 @@ function HomePage() {
         onClose={() => {
           setMenuOpen(false);
           document.body.classList.remove("dialog-open");
-          menuTrigger.current?.focus();
+          menuTrigger.current?.focus({ preventScroll: true });
         }}
         aria-labelledby="menu-title"
       >
@@ -268,19 +257,18 @@ function HomePage() {
           </button>
         </div>
         <p id="menu-title" className="mono">
-          FIND YOUR PERSPECTIVE.
+          ZAKI FX TRADING ACADEMY
         </p>
         <nav aria-label="Mobile navigation">
           {[
-            ["01", "Meet Zaki", "about"],
-            ["02", "The approach", "method"],
-            ["02", "Programmes", "courses"],
-            ["03", "1:1 mentorship", "mentorship"],
-            ["04", "Your questions", "questions"],
-            ["05", "Let’s talk", "contact"],
-          ].map(([n, label, id]) => (
+            ["Meet Zaki", "about"],
+            ["The approach", "method"],
+            ["Programmes", "courses"],
+            ["1:1 mentorship", "mentorship"],
+            ["Your questions", "questions"],
+            ["Let’s talk", "contact"],
+          ].map(([label, id]) => (
             <a href={`#${id}`} key={id} onClick={closeMenu}>
-              <span className="mono">{n}</span>
               {label}
               <Arrow />
             </a>
@@ -292,36 +280,37 @@ function HomePage() {
       </dialog>
 
       <main id="main">
-        <section id="home" className="hero light-section">
+        <section id="home" className="hero dark-section">
           <div className="shell hero-editorial">
             <div className="hero-copy">
               <p className="eyebrow" data-reveal="rise">
-                <span className="tiny-rule" /> Forex education. A personal
-                perspective.
+                <span className="tiny-rule" /> Forex education &amp; personal
+                mentorship
               </p>
               <h1 data-reveal="rise">
-                Read the market.
-                <br />
                 Understand
                 <br />
-                <em>what matters.</em>
+                the market.
+                <br />
+                <em>With Zaki.</em>
               </h1>
               <p className="hero-intro" data-reveal="rise">
-                Learn the concepts. Understand the risks. Develop your thinking.
-                Forex education and personal mentorship, with Zaki.
+                Forex education with a personal approach. Study price action,
+                market structure and risk through structured courses and
+                one-to-one mentorship.
               </p>
               <div className="hero-actions" data-reveal="rise">
                 <a className="button button-dark" href="#courses">
-                  <span>Explore the programmes</span>
+                  <span>Find your programme</span>
                   <Arrow />
                 </a>
                 <a className="understated-link" href="#about">
-                  Meet your mentor <ArrowRight size={17} />
+                  Meet Zaki <ArrowRight size={17} />
                 </a>
               </div>
               <p className="hero-principle">
-                <ShieldCheck size={16} strokeWidth={1.3} /> Education first. A
-                considered approach, always.
+                <ShieldCheck size={17} strokeWidth={1.5} /> A foundation in
+                knowledge. An understanding of risk.
               </p>
             </div>
             <figure className="hero-portrait" data-reveal="scale">
@@ -333,48 +322,35 @@ function HomePage() {
                 fetchPriority="high"
               />
               <figcaption>
-                <span className="portrait-byline">With Zaki</span>
+                <span className="portrait-byline">Zaki</span>
                 <span>Gold trader &amp; educator</span>
               </figcaption>
-              <span className="portrait-margin">
-                A personal approach to learning.
-              </span>
             </figure>
-            <div className="hero-field-note" data-reveal="rise">
-              <p className="eyebrow">A note before you begin</p>
-              <p>
-                Before the trade,
-                <br />
-                <em>comes the thinking.</em>
-              </p>
-              <svg viewBox="0 0 140 42" fill="none" aria-hidden="true">
-                <path
-                  d="M5 30c40-25 82-12 121-15m-13-10 16 10-13 12"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                />
-              </svg>
-            </div>
           </div>
-          <div className="shell hero-footline">
-            <span>Structure. Risk. Psychology.</span>
-            <a href="#method">
-              A lesson in looking closer <ArrowDown size={16} />
-            </a>
-          </div>
+          <nav
+            className="shell hero-programmes"
+            aria-label="Explore academy programmes"
+          >
+            {programmes.map((programme) => (
+              <a href={`/programmes/${programme.slug}/`} key={programme.id}>
+                <span>{programme.interest}</span>
+                <span>
+                  £{programme.price} <Arrow />
+                </span>
+              </a>
+            ))}
+          </nav>
         </section>
-        <section id="about" className="about-section light-section">
+        <section id="about" className="about-section dark-section">
           <div className="shell about-composition">
             <p className="eyebrow" data-reveal="rise">
-              The person behind
-              <br />
-              the perspective.
+              Meet your educator
             </p>
             <div className="about-statement" data-reveal="rise">
               <h2>
-                Trading knowledge.
+                The person
                 <br />
-                <em>A human approach.</em>
+                <em>behind the charts.</em>
               </h2>
               <p>
                 Zaki is a Gold (XAUUSD) trader with over six years of trading
@@ -382,13 +358,18 @@ function HomePage() {
                 structure, price action and risk management through practical
                 trading education.
               </p>
+              <div className="about-topics" aria-label="Teaching focus">
+                <span>Price action</span>
+                <span>Risk management</span>
+                <span>Trading psychology</span>
+              </div>
             </div>
             <div className="about-aside" data-reveal="rise">
               <span className="about-number">1:1</span>
               <p>
-                Personal guidance.
+                Learn directly with Zaki.
                 <br />
-                Room for your questions.
+                Bring your own questions.
               </p>
               <a href="#mentorship">
                 Discover mentorship <ArrowUpRight size={16} />
@@ -399,21 +380,18 @@ function HomePage() {
 
         <MarketStory />
 
-        <section id="courses" className="courses-section light-section">
+        <section id="courses" className="courses-section dark-section">
           <div className="shell">
-            <SectionLabel number="02">The programmes</SectionLabel>
+            <SectionLabel>Choose your programme</SectionLabel>
             <div className="section-title-row">
               <h2 data-reveal="rise">
-                Your learning,
+                Three ways to
                 <br />
-                <em>at your own level.</em>
+                <em>learn with Zaki.</em>
               </h2>
               <p data-reveal="rise">
-                Build the fundamentals.
-                <br />
-                Deepen your analysis.
-                <br />
-                Or work directly with Zaki.
+                Explore the curriculum, find your level and ask the questions
+                that matter before you enrol.
               </p>
             </div>
             <div className="programme-list">
@@ -447,11 +425,8 @@ function HomePage() {
                       className="programme-detail"
                     >
                       <div className="programme-description">
-                        <h4>{course.for}</h4>
+                        <h3>{course.for}</h3>
                         <p>{course.description}</p>
-                        <span className="mono course-education-note">
-                          Knowledge is the starting point.
-                        </span>
                       </div>
                       <ul>
                         {course.topics.map((topic) => (
@@ -501,47 +476,88 @@ function HomePage() {
 
         <section id="mentorship" className="mentorship-section dark-section">
           <div className="shell">
-            <SectionLabel number="03">A closer conversation</SectionLabel>
+            <SectionLabel>Private mentorship</SectionLabel>
+            <div className="mentor-heading" data-reveal="rise">
+              <h2>
+                Your charts.
+                <br />
+                <em>Zaki’s guidance.</em>
+              </h2>
+              <p>
+                Work through the reasoning behind your analysis, with room to
+                ask, revisit and understand.
+              </p>
+            </div>
             <div className="mentor-grid">
               <article className="mentor-session-note" data-reveal="rise">
-                <p className="eyebrow">Your learning, in focus</p>
-                <h3>Bring the questions<br />behind your trades.</h3>
+                <p className="eyebrow">Inside the conversation</p>
+                <h3>
+                  Start with a chart.
+                  <br />
+                  Explore the thinking.
+                </h3>
                 <ol>
-                  <li><span>01</span><div><h4>Reading structure</h4><p>Which levels matter, and what would change your view?</p></div></li>
-                  <li><span>02</span><div><h4>Managing risk</h4><p>Where does the idea become invalid? What are you prepared to risk?</p></div></li>
-                  <li><span>03</span><div><h4>Building a process</h4><p>What can you learn from the decisions in your journal?</p></div></li>
+                  <li>
+                    <span>01</span>
+                    <div>
+                      <h4>Reading structure</h4>
+                      <p>
+                        Which levels matter, and what would change your view?
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <span>02</span>
+                    <div>
+                      <h4>Managing risk</h4>
+                      <p>
+                        Where does the idea become invalid? What are you
+                        prepared to risk?
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <span>03</span>
+                    <div>
+                      <h4>Building a process</h4>
+                      <p>
+                        What can you learn from the decisions in your journal?
+                      </p>
+                    </div>
+                  </li>
                 </ol>
-                <p className="session-note-footer"><MessageCircle size={18} strokeWidth={1.5} /> Space to ask. Time to understand.</p>
+                <p className="session-note-footer">
+                  <MessageCircle size={19} strokeWidth={1.5} /> Personal
+                  guidance through private Zoom sessions.
+                </p>
               </article>
               <div className="mentor-copy">
-                <p className="mono lime-text" data-reveal="rise">
-                  Private mentorship with Zaki
+                <h3 data-reveal="rise">VIP 1-to-1 Mentorship</h3>
+                <p className="mentor-price" data-reveal="rise">
+                  £{programmes[2].price} <span>GBP</span>
                 </p>
-                <h2 data-reveal="rise">
-                  Some things make
-                  <br />
-                  more sense
-                  <br />
-                  <em>in conversation.</em>
-                </h2>
                 <p data-reveal="rise">
-                  Your questions deserve more than a general answer. Learn
-                  directly with Zaki, a Gold (XAUUSD) trader with over six years
-                  of trading experience.
+                  Individual guidance around your learning needs, from Gold
+                  analysis and market structure to risk and trading psychology.
                 </p>
                 <div className="mentor-details" data-reveal="rise">
                   <span>Private Zoom sessions</span>
                   <span>Practical chart analysis</span>
                   <span>Individual learning needs</span>
                 </div>
-                <a
-                  className="button button-lime"
-                  href="#contact"
-                  onClick={() => enquire("VIP 1-to-1 Mentorship")}
+                <button
+                  className="button button-dark"
+                  onClick={() => setEnrolment(programmes[2])}
                   data-reveal="rise"
                 >
-                  <span>Talk about your mentorship</span>
+                  <span>Enquire about mentorship</span>
                   <Arrow />
+                </button>
+                <a
+                  className="understated-link"
+                  href="/programmes/vip-mentorship/"
+                >
+                  Explore the mentorship <ArrowRight size={17} />
                 </a>
                 <p className="mentor-availability">
                   Tell us where you are. We’ll discuss your goals, programme
@@ -555,7 +571,7 @@ function HomePage() {
         <section id="questions" className="questions-section light-section">
           <div className="shell questions-grid">
             <div>
-              <SectionLabel number="04">A little more clarity</SectionLabel>
+              <SectionLabel>Frequently asked questions</SectionLabel>
               <h2 data-reveal="rise">
                 Good questions.
                 <br />
@@ -563,10 +579,9 @@ function HomePage() {
               </h2>
             </div>
             <div className="question-list">
-              {questions.map(([q, a], i) => (
+              {questions.map(([q, a]) => (
                 <details key={q} data-reveal="rise">
                   <summary>
-                    <span className="mono question-number">0{i + 1}</span>
                     <span>{q}</span>
                     <Plus size={19} strokeWidth={1.3} aria-hidden="true" />
                   </summary>
@@ -579,13 +594,13 @@ function HomePage() {
 
         <section id="contact" className="contact-section">
           <div className="shell">
-            <SectionLabel number="05">Let’s find your next step</SectionLabel>
+            <SectionLabel>Talk to the academy</SectionLabel>
             <div className="contact-grid">
               <div className="contact-copy">
                 <h2 data-reveal="rise">
-                  A little guidance.
+                  Let’s find
                   <br />
-                  <em>A clearer direction.</em>
+                  <em>your starting point.</em>
                 </h2>
                 <p data-reveal="rise">
                   A course question. A mentorship enquiry.
@@ -673,7 +688,8 @@ function HomePage() {
                 </label>
                 <div className="form-submit-row">
                   <p>
-                    Creates an email draft for you to review and send.
+                    Prepare your enquiry, then send it through WhatsApp or
+                    email.
                     <br />
                     <button
                       className="inline-button"
@@ -692,10 +708,18 @@ function HomePage() {
                   <div className="draft-result" role="status">
                     <strong>Your enquiry is ready.</strong>
                     <p>
-                      Review and send the draft in your email app to complete
-                      your enquiry.
+                      Choose WhatsApp or email to review and send your enquiry.
                     </p>
-                    <a ref={draftRef} href={draft.mailto}>
+                    <a
+                      ref={draftRef}
+                      href={draft.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Continue on WhatsApp <ArrowUpRight size={16} />
+                      <span className="sr-only">Opens in a new tab</span>
+                    </a>
+                    <a href={draft.mailto}>
                       Open email draft <ArrowUpRight size={16} />
                     </a>
                     <button type="button" onClick={copyDraft}>
@@ -836,14 +860,15 @@ function HomePage() {
           <em>Your choice.</em>
         </h2>
         <p>
-          The form prepares an email draft on your device. This website does not
-          submit or store your enquiry on a server. Your details are shared with
-          ZAKI FX when you choose to send that email.
+          The form prepares your enquiry on your device. Choose WhatsApp or your
+          email app to review and send it to ZAKI FX. Opening WhatsApp shares
+          the prepared text with that service. The website itself does not store
+          enquiries on a server.
         </p>
         <p>
-          WhatsApp, Telegram, TikTok and broker referrals are
-          external services with their own privacy policies. This redesign adds
-          no analytics or advertising cookies.
+          WhatsApp, Telegram, TikTok and broker referrals are external services
+          with their own privacy policies. This redesign adds no analytics or
+          advertising cookies.
         </p>
         <p>
           For questions about messages you send, contact{" "}
