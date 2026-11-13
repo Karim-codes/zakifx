@@ -4,7 +4,7 @@ export const programmes = [
     slug: "beginner-to-advanced",
     number: "01",
     category: "Build your foundation",
-    title: "Forex Beginner to Advanced",
+    title: "Forex Beginner to Advanced Bootcamp",
     price: 300,
     for: "Your first step into forex.",
     description:
@@ -16,7 +16,7 @@ export const programmes = [
       "ICT concepts, liquidity & fair value gaps",
       "Risk management & trading psychology",
     ],
-    interest: "Forex Beginner to Advanced",
+    interest: "Forex Beginner to Advanced Bootcamp",
     url: "https://www.zakifx.com/shop/p/product-2-5c6mb-j8mng-zsl73-srtpj-xj79n",
   },
   {

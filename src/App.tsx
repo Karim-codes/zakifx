@@ -20,7 +20,7 @@ import { AgencyCredit } from "@/components/agency-credit";
 const questions = [
   [
     "Where should I start?",
-    "Beginner to Advanced covers the fundamentals. Advanced Strategies focuses on Gold, liquidity and specialised analysis. VIP mentorship provides personal guidance. Tell the academy about your experience and goals if you need help choosing.",
+    "Forex Beginner to Advanced Bootcamp covers the fundamentals. Advanced Strategies focuses on Gold, liquidity and specialised analysis. VIP mentorship provides personal guidance. Tell the academy about your experience and goals if you need help choosing.",
   ],
   [
     "How will I learn?",

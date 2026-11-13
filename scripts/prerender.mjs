@@ -18,7 +18,7 @@ console.log(
   "Prerendered complete public page: readable content and native course/FAQ disclosures work before JavaScript.",
 );
 for (const [slug, title] of [
-  ["beginner-to-advanced", "Forex Beginner to Advanced"],
+  ["beginner-to-advanced", "Forex Beginner to Advanced Bootcamp"],
   ["advanced-strategies", "Advanced Trading Strategies"],
   ["vip-mentorship", "VIP 1-to-1 Mentorship"],
 ]) {
